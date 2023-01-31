@@ -1,0 +1,52 @@
+div{
+    background-color: #ccc;
+    width: 120px;
+    height: 120px;
+    margin:5px;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    border: 5px solid #333;
+    display: inline-block;
+    transition-property: background-color, width, height,; /*свойство как анимируемое*/
+    transition-duration: 2s; /*установка времени перехода в секундах*/
+    transition-timing-function: easy; /*скорость хода и выполнение анимации*/
+    transition-delay: 50ms; /*delay*/
+    
+}
+.rotated{
+    transform: translate(50px, 100px) skew(30deg, 10deg) scale(1, 3) rotate(90deg);
+}
+.transform1{
+    transform: translate(200px, 450px) rotate(-45deg);
+    transform-origin: right bottom;    
+}
+div:hover{
+/*    background-color: red;*/
+    border-color: green;
+    width: 150px;
+    height: 150px;
+
+    animation-name: backgroundColorAnimation; /*прикрепить анимацию к элементу*/
+    animation-duration: 2s; /*duration*/
+    /*сколько раз будет повторяться анимация / бесконечное количество раз, то этому свойству присваивается значение infinite:*/
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+    animation-fill-mode: forwards; /*позволяет в качестве окончательного значения анимируемого свойства установить именно то, которое было в последнем кадре*/
+}
+@keyframes backgroundColorAnimation {
+    from {
+        background-color: red;
+    }
+    25%{
+        background-color: yellow;
+    }
+    50%{
+        background-color: green;
+    }
+    75%{
+        background-color: blue;
+    }
+    to {
+        background-color: violet;
+    }
+}
